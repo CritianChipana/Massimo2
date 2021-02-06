@@ -6,6 +6,9 @@
  	?>
 		<link rel="stylesheet" type="text/css" href="../public/css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="../public/css/nav.css"> 
+		
+		<link rel="stylesheet" href="../Public/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
 		 
  	    <div class="global-fixed">
 	       <header class="header1">
@@ -38,7 +41,7 @@
 	          	<input type="hidden" name="idbtn" value="1">
 	          	<input type="hidden" name="fom1" value="1">
 	          	<input type="hidden" name="dni" value=" <?php echo $listaPrivilegios[0]['dni']; ?> ">
-	          	<input type="submit" name="nombrep" value="<?php echo $listaPrivilegios[$i]['nombrep']; ?>">
+	          	<input class="btn btn-primary" type="submit" name="nombrep" value="<?php echo $listaPrivilegios[$i]['nombrep']; ?>">
 				<input name="p-<?php echo $listaPrivilegios[$i]['idprivilegio'] ?>" type="hidden"/>
 	          </form>
     <!--a class="principal" href="<!-?php echo $listaPrivilegios[$i]['link']."?idbtn=".$listaPrivilegios[$i]['idprivilegio']."&dni=".$listaPrivilegios[$i]['dni']; ?>"><!-?php echo $listaPrivilegios[$i]['nombrep']; ?></a> -->
