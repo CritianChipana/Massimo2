@@ -19,13 +19,13 @@
 			<title>Lista de Proformas</title>
 		</head>
 		<link rel="stylesheet" type="text/css" href="../public/css/main.css">
-		<div >
+		<div class="container" >
 			<?php // var_dump($listadocomandas); ?>
 			<?php $list=count($listadocomandas);
 			 ?>
 			<?php   date_default_timezone_set("America/Lima");  ?>
 			<br>
-		<p align="center">LISTADO DE PROFORMAS</p>
+		<h3 align="center">LISTADO DE PROFORMAS</h3><br>
 		<?php 
 		if ($list>10) {?>
 		<form action="controlVerificarAccesoComprobante.php" method="POST">
@@ -44,16 +44,16 @@
 				<input type="submit" name="fom1" value="Volver Atras">
 			</p>
 		</form> -->
-			<p align="center"><?php echo $mensaje ?></p>
+			<center><?php echo $mensaje ?></p>
 		<?php if (is_array($listadocomandas)): ?>
-		<table border="1px" align="center" style="margin-top: 2rem">
+		<table class="table" >
 			<thead>
 				<tr>
-					<th>Mesa: </th>
+					<th>Mesa</th>
 					<th>DNI de Empleado</th>
 					<th>Fecha de emision</th>
 					<th>Estado</th>					
-					<th colspan="3">ACCION</th>
+					<th colspan="3">Acción</th>
 				</tr>
 			</thead>
 			<?php
@@ -71,14 +71,19 @@
 					<td><?php echo $listadocomandas[$i]['mesanum'] ?></td>
 					<td><?php echo $listadocomandas[$i]['dni'] ?></td>
 					<td><?php echo date("Y")."-".date("m")."-".date("d");?></td>					
-					
-					<td><?php echo $listadocomandas[$i]['estadocomprobante'] ?></td>
+					<!--?php echo $listadocomandas[$i]['estadocomprobante'] ?-->
+					<td> 
+					<?php   if ($listadocomandas[$i]['estadocomprobante']==1) echo "<div class='badge bg-success'>Activo</div> ";
+				 	else echo "<div class='badge bg-danger' >Disponible</div>"; ?>
+				</td>
 					<form  action="controlVerificarAccesoComprobante.php" method="POST">
 					<input type="hidden" name="dni" value=" <?php echo $listaPrivilegios[0]['dni']; ?> ">
-					<input type="hidden" name="idbtn" value="1">
+					<input type="hidden" name="idbtn" value="1">  
+
+
 					<input type="hidden" name="idcomanda" value=" <?php echo $listadocomandas[$i]['idcomanda']; ?> ">
 					<?php if ($listadocomandas[$i]['estadocomprobante']==1): ?>
-					<td><input type="submit" name="btncb" value="Boleta"></td>
+					<td><input class="btn btn-warning" type="submit" name="btncb" value="Boleta"></td>
 					<?php endif ?>
 			
 					</form>
@@ -88,7 +93,7 @@
 			 } ?>
 		</table>					
 		<?php endif ?>
-			
+			</center>	
 		</div>
 			<?php
 		}

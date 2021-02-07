@@ -19,10 +19,7 @@ body{
 h1{
 	margin: 0px;
 	justify-content: center;
-}
-label{
-	font-size: 15px !important;
-}
+} 
 .imgsalir {height: 3rem;}
 .header1 {
 	background-color: #0c3c60;	

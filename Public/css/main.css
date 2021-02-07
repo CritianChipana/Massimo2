@@ -1,19 +1,7 @@
 body{
-    background-color:#dee2e6;
-    font-size: 1.5rem !important;
+    background-color:#ffffff;
   
-<<<<<<< HEAD
 }  /*
-=======
-}
- table.dataTable thead {
-    background: #007bff;
-    color:white;
-}
-.btn{
-  font-size: 1.8rem !important;
-}
->>>>>>> 542335442487121da0784dc71b5ba6950c83ea0f
 div.dataTables_wrapper div.dataTables_filter {
   text-align: initial !important;
 }   */
@@ -41,7 +29,7 @@ header{
 }
  
 #tablita {
-  width:50%  !important;
+  width:50%  !important; 
 }  
 .thead {
   text-align: center  !important;

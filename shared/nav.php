@@ -4,9 +4,9 @@
 		if($listaPrivilegios==[]) $listaPrivilegios = $_SESSION['privilegios'];
 		$_SESSION['privilegios']= $listaPrivilegios;
  	?>
-		<link rel="stylesheet" type="text/css" href="../public/css/normalize.css">
+		<!--link rel="stylesheet" type="text/css" href="../public/css/normalize.css" -->
 		<link rel="stylesheet" type="text/css" href="../public/css/nav.css"> 
-		
+		<link rel="stylesheet" type="text/css" href="../public/css/main.css"> 
 		<link rel="stylesheet" href="../Public/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
 		 
