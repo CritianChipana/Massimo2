@@ -24,8 +24,12 @@
 				</thead>
 				<tr><td>NOMBRE DEL MENU</td><td><input type="text" name="nombrepr" required></td> </tr>
 				<tr><td>DESCRIPCION </td><td><textarea name="descripcion" rows="2" cols="23" required ></textarea></td></tr>
-				<tr><td>PRECIO</td><td><input type="number" name="precio"  required></td></tr>
-				<tr><td>ESTADO</td><td><input type="number" name="estado"  required></td></tr>	
+				<tr><td>PRECIO</td><td><input type="number" step="0.01" name="precio"  required></td></tr>
+				<tr><td>ESTADO</td>
+				<td><select class='form-control' name='estado' id='estado'>
+                                        <option value="1">Activo</option>
+                                        <option value="0">Inactivo</option>  </tr>
+                                    </select> </td> 
 				</table>
 				</div>	
 								<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">

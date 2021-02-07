@@ -23,12 +23,12 @@
 			 <tr> <td>Nr°</td><td><input type="text" name="idproducto" value="<?php echo $detallemenu[0]['idproducto'] ?>" disabled></td> </tr>
 			 <tr> <td>NOMBRE</td><td><input type="text" name="nombrepr"   value="<?php echo $detallemenu[0]['nombrepr'] ?>" required></td> </tr>
 			 <tr> <td>DESCRIPCION </td><td><textarea name="descripcion" rows="2" cols="53" required ><?php echo $detallemenu[0]['descripcion']?></textarea></td> </tr>
-			 <tr> <td>PRECIO</td><td><input type="number" name="precio" value="<?php echo $detallemenu[0]['precio'] ?>" required></td> </tr>
+			 <tr> <td>PRECIO</td><td><input type="number" step="0.01" name="precio" value="<?php echo $detallemenu[0]['precio'] ?>" required></td> </tr>
 			 
 			 <tr> <td>ESTADO</td>  
 			 <td><select class='form-control' name='estado' id='estado' <?PHP echo $detallemenu[0]['estado'] ; ?>>
                                         <option value="1">Activo</option>
-                                        <option value="0">Inctivo</option>  </tr>
+                                        <option value="0">Inactivo</option>  </tr>
                                     </select> </td> 
 			 </table>	
 							<input type="hidden" name="idproducto" value=" <?php echo $detallemenu[0]['idproducto'] ?> ">
