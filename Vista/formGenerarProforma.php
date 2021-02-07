@@ -39,12 +39,19 @@ class formGenerarProforma{
                 $dni = $listaprivilegios[$i]['dni'];
                 // $empleado = $listaprivilegios[$i]['nombre']." ".$listaprivilegios[$i]['apellidos'];
         } ?>
-        <hr>
+        <hr>  
+            
+        <div  class ="container">
+        <div class="row">
+        <div class="col-lg-6">
+            <div  class="modal-body">   
+                <div class="card"> 
+                    <div class="card-body">
         <form action="../Controlador/controlGenerarProforma.php" method="post">
 
-            <table>
+            <table align="center" clase="table" >
                 <tr>
-                    <th>Platillo</th>
+                    <th>Producto</th>
                     <th>Precio</th>
                     <th>cantidad</th>
                     <th>Grabar</th>
@@ -66,20 +73,24 @@ class formGenerarProforma{
             }
             ?>
             </table>
+        
             
 <!-- __________________________________________________________________________________________ -->
             <!-- include_once(); -->
             <?php 
                 $Lmesas = new EntidadMesa;
                 $mesas = $Lmesas->Listarmesas3();
-            ?><br>
+            ?> 
+            <p align="center"><br>
             <label for="">Numero de Mesa:</label>
             <select name="mesa" id="">
                 <option value="mesa">Mesa</option>
                 <?php foreach($mesas as $row){  ?>
                     <option value="<?php echo $row['numero'] ?>"><?php echo $row['numero'] ?></option>
                 <?php }  ?>
-            </select><br>
+            </select>
+            </p> 
+            
 <!-- _________________________________________________________________________________________________________ -->
 
             <input type="text" name="tamano" value="<?php echo $cont ?>" id="" hidden>
@@ -93,20 +104,22 @@ class formGenerarProforma{
                 <input type="number" name="dnicliente" id="" hidden>
             <!-- <label for="">Fecha:<br></label> -->
                 <input type="date" name="fecha" id="" hidden><br>
-            <input name="a" type="submit" value="generar"><br>
-        </form>
-        <hr>
+                <p align="center"><input name="a" type="submit" value="GENERAR" class="btn btn-success" ></p> 
+        </form> 
+        </div></div></div></div> 
 <!-- ____________________________________________________________________________________ -->
             <?php
                
                 $productos = new EntidadProforma;
                 $Lproductos = $productos -> ListarProformashow($dni);
 
-            ?>
-            
-            <div>
-                <table class="tabla">
-                    <thead class="cabeza">
+            ?> 
+            <div class="col-lg-6">
+             <div   class="modal-body">   
+                <div class="card"> 
+                    <div class="card-body">
+                <table class="table">
+                    <thead>
                         <!-- <th>COMANDA</th> -->
                         <!-- <th>EMPLEADO</th> -->
                         <!-- <th>ID EMPLEADO</th> -->
@@ -117,7 +130,7 @@ class formGenerarProforma{
                         <th>ELIMINAR</th>
                         <th>PEDIDOS</th>
                     </thead>
-                    <tbody class="fila">
+                    <tbody>
                         <?php foreach ($Lproductos as $row){  ?>
                             <tr class="">
                                 <!-- <th ><?php //echo $row['idcomanda'];?></th> -->
@@ -128,14 +141,16 @@ class formGenerarProforma{
                                 <th class="fila"><?php echo $row['mesanum'];?></th>
                                 <th class="fila"><?php echo $row['total'];?></th>
                                 <!-- <th class="fila"><?php //echo $row['desea'];?></th> -->
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=1&idcomanda=<?php echo $row['idcomanda']?>">Agregar Producto</a></div></th>
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=2&idcomanda=<?php echo $row['idcomanda']?>">Cancelar Pedido</a></div></th>
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=3&idcomanda=<?php echo $row['idcomanda']?>">Listar Pedidos</a></div></th>
+                  
+                                <th><div ><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=1&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="add_box"></a></div></th>
+                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=2&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="delete"></a></div></th>
+                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=3&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="class"></a></div></th>
+                                 
                             </tr>
                             <?php } ?>
                     </tbody>
-                </table>
-            </div>
+                </table> 
+                    </div></div></div></div></div></div>
 
 
         <hr>

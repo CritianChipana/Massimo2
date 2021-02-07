@@ -8,11 +8,12 @@
      include_once("../Modelo/EntidadDetallesProforma.php");
      include_once("../Vista/formGenerarProforma.php");
      include_once("../Vista/formListarPedidos.php");
-    //  include_once
+     include_once("../Modelo/EntidadMesa.php");
 
 
     $dni = $_GET['dni']; 
     $idcomanda = $_GET['idcomanda'];
+    $mesa = $_GET['mesa'];
      if($_GET['b']==1){
 
          $objetoEntidad = new EdetalleUsuario;
@@ -23,6 +24,8 @@
          $objetoProforma -> formSeleccionarPlatillo($listaprivilegios,$listaproductos,$idcomanda);
      }else if($_GET['b']==2){
         $opbjetocancelar  = new EntidadProforma;
+        $mesaobjeto = new EntidadMesa;
+        $mesaobjeto->liberarmesa($mesa);
         $opbjetocancelar ->Cancelar($idcomanda);
         echo    "<script>
         alert('Se Cancelo el pedido');
@@ -30,6 +33,8 @@
         $objetoEntidad = new EdetalleUsuario;
         $objetoC = new formGenerarProforma;
         $objetoEntidad2 = new EntidadProducto;
+
+
         $listaprivilegios =$objetoEntidad -> obtenerPrivilegios($dni);
         $listaproductos = $objetoEntidad2->listar_producto();
         $objetoC -> formGenerarProformashow($listaprivilegios,$listaproductos);
@@ -63,4 +68,4 @@
 
 }
 
-?>                                    
+?>   

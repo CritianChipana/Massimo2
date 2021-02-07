@@ -16,13 +16,13 @@
 		</head>
 		<body>
 		<div class= container>
-		<p align="center">LISTADO DE MENUS</p>
+		<h3 align="center">GESTIONAR MENUS</h3><br>
 		<form action="controlVerificarAccesoMenu.php" method="POST">
 		<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
 		<input type="hidden" name="idbtn" value="1">
-		<p align="center"><input type="submit" name="btnaddmenu" value="AGREGAR MENU"></p>
-		</form>
-		<table border="1px" align="center" style="margin-top: 2rem" class =table>
+		<p align="center"><input type="submit" class="btn btn-success" name="btnaddmenu" value="AGREGAR MENU"></p>
+		</form> 
+		<table border="1px" class =table>
 			<thead>
 				<tr>
 					<th>Nr°</th>

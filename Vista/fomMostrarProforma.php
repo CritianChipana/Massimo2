@@ -9,8 +9,7 @@ class formMostrarProforma{
 		<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>Generar Porforma</title>
-		<link rel="stylesheet" type="text/css" href="../public/css/normalize.css">
+		<title>Generar Porforma</title> 
 		<link rel="stylesheet" type="text/css" href="../public/css/nav.css"> 
 		</head>
 		<body>
@@ -32,7 +31,7 @@ class formMostrarProforma{
 				$dni=$listaprivilegios[$i]['dni'];
 			} ?>
 		 
-		 <form action="../Controlador/controlCerrarProforma.php" method="post">
+		 <form action="../Controlador/controlVerificarAccesoProforma.php" method="post">
 
 			<table>
 				<tr>

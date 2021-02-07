@@ -9,7 +9,7 @@ class EntidadProducto extends conexion{
     }
 
     public function listar_producto(){
-        $consulta = "select * from producto";
+        $consulta = "select * from producto where estado=1";
         $resultado = mysqli_query($this->conectar(),$consulta) or die("No se encontro productos");
         $this->desconectar();
         return $resultado;

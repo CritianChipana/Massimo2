@@ -66,8 +66,12 @@ public function ListarProformashow($dni){
 }
 
 public function Cancelar($idcomanda){
-  $sql = "UPDATE comanda SET estadocomprobante=0 where idcomanda=$idcomanda";
+//   $sql = "UPDATE comanda SET estadocomprobante=0 where idcomanda=$idcomanda";
+  $sql = "DELETE from comanda WHERE idcomanda = $idcomanda";
   $resultado = mysqli_query($this->conectar(),$sql);
+  $sql2="DELETE FROM detallecomanda where idcomanda = $idcomanda";
+  $resultado2 = mysqli_query($this->conectar(),$sql2);
+
   if($resultado){
       return 1;
   }else{

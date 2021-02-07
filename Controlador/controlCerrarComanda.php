@@ -13,7 +13,7 @@ if(isset($_POST['a'])){
     include_once("../shared/formMensajeSistema.php");
     $objetoMensaje = new formMensajeSistema;
     $objetoMensaje -> formMensajeSistemaShow2("Acceso Incorrecto","<a href='../index.php'>Ingresar Usuario</a>");
-    
+
 }
 
 ?>

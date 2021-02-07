@@ -21,7 +21,7 @@
 				if ($btnTP=='Boleta') { ?>
 					<div style="text-align:center;">
 					<form action="controlVerificarAccesoComprobante.php" method="POST">	
-					<p align="center">DETALLE DE PROFORMA</p>
+					
 					<table border="1px" align="center" style="margin-top: 2rem">
 						<thead>
 							<tr><th colspan="4">--RESTAURANT MASSIMO--</th></tr>

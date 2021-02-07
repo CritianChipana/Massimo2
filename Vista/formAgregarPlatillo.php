@@ -80,7 +80,12 @@ class formAgregarPlatillo{
             </label> -->
             <input name="aa" type="submit" value="Agregar">
             </form></center>
-           
+            <center>
+            <form action="../Controlador/controlVerificarAccesoProforma.php" method="POST">
+                <input type="text"  value="<?php echo $dni?>" name="dni"  hidden >
+                <input type="submit" value="Atras">
+            </form>
+            </center>
         <hr>
         <script src="../../js/capturarid.js"></script>
 

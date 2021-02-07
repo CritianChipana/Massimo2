@@ -20,17 +20,17 @@ if(isset( $_POST['botonbuscarcomprobante'])){
         $objetobuscar = new formBuscarComprobante;
         // $listaproductos = $objetoEntidad->listar_producto();
         $objetobuscar -> formBuscarComprobanteShow($listaprivilegios);
-        
+
     }else{
         include_once("controlGenerarComprobanteDevolucion.php");
         $objetoControlBD = new controlGenerarComprobanteDevolucion();
         $objetoControlBD-> verificarCampos($codigo,$tipo,$dni);
     }
-    
-    
+
+
 }else{
     include_once("../shared/formMensajeSistema.php");
-    
+
     $objetoMensaje = new formMensajeSistema;
     $objetoMensaje -> formMensajeSistemaShow2("ACCESO NO PERMITIDO","<a href='../index.php'>Iniciar Session</a>");
 

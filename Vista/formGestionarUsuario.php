@@ -16,8 +16,7 @@ class formGestionarUsuario
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <title>Gestionar usuario</title> 
-            <link rel="stylesheet" type="text/css" href="../public/css/normalize.css">
+            <title>Gestionar usuario</title>  
 		    <link rel="stylesheet" type="text/css" href="../public/css/nav.css">  
             <link rel="stylesheet" href="../Public/bootstrap.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 

@@ -12,26 +12,34 @@
  		<head>
  			<title>Editar Menu</title>
  		</head>
- 		<body>
- 			<div>
- 			<div>
+ 		<body> 
  			 	<form  action="controlVerificarAccesoMenu.php" method="POST">	
- 			<p align="center">
-
-			 				Nr°<input type="text" name="idproducto" value="<?php echo $detallemenu[0]['idproducto'] ?>" disabled><br>
-			  				NOMBRE DEL MENU<input type="text" name="nombrepr" value="<?php echo $detallemenu[0]['nombrepr'] ?>" required><br>
-			 				DESCRIPCION <textarea name="descripcion" rows="2" cols="45" required ><?php echo $detallemenu[0]['descripcion']?></textarea><br>
-			 				PRECIO<input type="number" name="precio" value="<?php echo $detallemenu[0]['precio'] ?>" required><br>
-			 				ESTADO<input type="number" name="estado" value="<?php echo $detallemenu[0]['estado'] ?>" required><br>		
+			<center>
+			<div class="modal-body"  id="tablita" >  
+                        <div class="card" > 
+                            <div class="card-body" > 
+							<h3>AGREGAR UN PRODUCTO </h3>
+			 <table class="table" >
+			 <tr> <td>Nr°</td><td><input type="text" name="idproducto" value="<?php echo $detallemenu[0]['idproducto'] ?>" disabled></td> </tr>
+			 <tr> <td>NOMBRE</td><td><input type="text" name="nombrepr"   value="<?php echo $detallemenu[0]['nombrepr'] ?>" required></td> </tr>
+			 <tr> <td>DESCRIPCION </td><td><textarea name="descripcion" rows="2" cols="53" required ><?php echo $detallemenu[0]['descripcion']?></textarea></td> </tr>
+			 <tr> <td>PRECIO</td><td><input type="number" step="0.01" name="precio" value="<?php echo $detallemenu[0]['precio'] ?>" required></td> </tr>
+			 
+			 <tr> <td>ESTADO</td>  
+			 <td><select class='form-control' name='estado' id='estado' <?PHP echo $detallemenu[0]['estado'] ; ?>>
+                                        <option value="1">Activo</option>
+                                        <option value="0">Inactivo</option>  </tr>
+                                    </select> </td> 
+			 </table>	
 							<input type="hidden" name="idproducto" value=" <?php echo $detallemenu[0]['idproducto'] ?> ">
 							<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
 			 				<input type="hidden" name="idbtn" value="1">
-						 	<input type="submit" name="btnconfirmaredit" value="CONFIRMAR">		
+						 	<input class="btn btn-success" type="submit" name="btnconfirmaredit" value="CONFIRMAR">		
 									
- 			</p>
+ 			
  				</form> 						
- 			</div>
- 			</div>
+ 			</div>  </div> </div> </div> 
+		</center>
  		</body>
  		</html>
 		<?php
