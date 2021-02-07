@@ -23,8 +23,7 @@
 	    <form  action="controlVerificarAccesoComprobante.php" method="POST">
 	          	<input type="hidden" name="dni" value=" <?php echo $listaPrivilegios[0]['dni']; ?> ">
 	          	<input type="hidden" name="idbtn" value="1">
-	          	<input type="submit" name="btnc" value="Comandas">
-	          	<input type="submit" name="btnp" value="Proformas">
+	          	<input type="submit" name="btnc" value="Proformas">
 	    </form>	
 		</div>
 

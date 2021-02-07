@@ -6,7 +6,7 @@
  	?>
 		<link rel="stylesheet" type="text/css" href="../public/css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="../public/css/nav.css"> 
-		<link rel="stylesheet" type="text/css" href="../public/css/main.css"> 
+		
 		<link rel="stylesheet" href="../Public/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
 		 
@@ -16,7 +16,7 @@
 	          <div class="nombre">
 	            <a href="principal.php">
 	              <span>RESTAURANT</span>
-	              <span class="color-logo"> MASSIMO</span>  
+	              <span class="color-logo"> SASON Y SABOR</span>  
 	            </a>
 	          </div>
 	          <div class="informacion">

@@ -15,6 +15,12 @@
 			$objDComanda=new EntidadComanda();
 			$fila=$objDComanda->detalleComandaID($idcomanda);
 			return $fila;
+		}		
+		public function detalleComandaMesa($idmesa)
+		{
+			$objDComanda=new EntidadComanda();
+			$fila=$objDComanda->detalleComandaMesa($idmesa);
+			return $fila;
 		}
 		public function listarProforma()
 		{

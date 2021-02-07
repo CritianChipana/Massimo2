@@ -13,11 +13,13 @@
             for($i = 0; $i < $num_registros; $i++){
                 $fila[$i] = mysqli_fetch_array($resultado);
             } 
-            $empleado=$fila[0]['empleado'];
-            $fecha=$fila[0]['fecha'];
+            date_default_timezone_set("America/Lima");
+            $dni=$fila[0]['dni'];
+            $mesanum=$fila[0]['mesanum'];
+            $fecha=date("Y")."-".date("m")."-".date("d");
             $total=$fila[0]['total'];
             $estadocomprobante=$fila[0]['estadocomprobante'];
-            $insertboleta="INSERT INTO boleta (empleado,fecha,total,estadocomprobante) VALUES ('$empleado','$fecha','$total','$estadocomprobante')";
+            $insertboleta="INSERT INTO boleta (dni,mesanum,fecha,total,estadocomprobante) VALUES ('$dni','$mesanum','$fecha','$total','$estadocomprobante')";
             $resultado = mysqli_query($this->conectar(),$insertboleta);
 
             $insertdetalleboleta="INSERT INTO detalleboleta (idboleta,idproducto,cantidad,precio) VALUES ";
@@ -34,6 +36,10 @@
 
             $updateestado="UPDATE comanda SET estadocomprobante=0 WHERE idcomanda='$idcomanda'";
             $resultado = mysqli_query($this->conectar(),$updateestado);
+
+            $updateestadomesa="UPDATE mesa SET estado=1 WHERE numero='$mesanum'";
+            $resultado = mysqli_query($this->conectar(),$updateestadomesa);
+            $this->desconectar();
           
 		}
 		public function agregarBoletaP($idproforma){

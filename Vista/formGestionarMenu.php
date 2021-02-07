@@ -16,13 +16,20 @@
 		</head>
 		<body>
 		<div class= container>
+<<<<<<< HEAD
 		<br>
+=======
+		<p align="center">LISTADO DE MENUS</p>
+>>>>>>> 542335442487121da0784dc71b5ba6950c83ea0f
 		<form action="controlVerificarAccesoMenu.php" method="POST">
 		<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
 		<input type="hidden" name="idbtn" value="1">
 		<p align="center"><input type="submit" class="btn btn-success" name="btnaddmenu" value="AGREGAR MENU"></p>
 		</form>
+<<<<<<< HEAD
 		<h3 align="center">LISTADO DE MENUS</h3>
+=======
+>>>>>>> 542335442487121da0784dc71b5ba6950c83ea0f
 		<table border="1px" align="center" style="margin-top: 2rem" class =table>
 			<thead>
 				<tr>
