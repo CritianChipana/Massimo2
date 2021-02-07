@@ -34,8 +34,11 @@
                 $insertdetalleboleta=substr($insertdetalleboleta, 0, -1);
             $resultado = mysqli_query($this->conectar(),$insertdetalleboleta);
 
-            $updateestado="UPDATE comanda SET estadocomprobante=0 WHERE idcomanda='$idcomanda'";
-            $resultado = mysqli_query($this->conectar(),$updateestado);
+            $deletedetallecomanda="DELETE FROM detallecomanda WHERE idcomanda='$idcomanda'";
+            $resultado = mysqli_query($this->conectar(),$deletedetallecomanda);
+
+            $deletecomanda="DELETE FROM comanda WHERE idcomanda='$idcomanda'";
+            $resultado = mysqli_query($this->conectar(),$deletecomanda);
 
             $updateestadomesa="UPDATE mesa SET estado=1 WHERE numero='$mesanum'";
             $resultado = mysqli_query($this->conectar(),$updateestadomesa);
