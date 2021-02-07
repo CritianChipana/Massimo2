@@ -14,20 +14,26 @@
  		</head>
  		<body>
  			<div>
- 			<div>
- 			 	<form  action="controlVerificarAccesoMenu.php" method="POST">	
- 			<p align="center">
-			  				NOMBRE DEL MENU<input type="text" name="nombrepr" required><br>
-			 				DESCRIPCION <textarea name="descripcion" rows="2" cols="45" required ></textarea><br>
-			 				PRECIO<input type="number" name="precio"  required><br>
-			 				ESTADO<input type="number" name="estado"  required><br>		
-							<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
-			 				<input type="hidden" name="idbtn" value="1">
-			 				<input type="submit" name="btnagregarmenu" value="AGREGAR">		
-					}
- 			</p>
- 				</form> 						
- 			</div>
+ 			
+			 
+				<form  action="controlVerificarAccesoMenu.php" method="POST">	
+				<div id="tablita" class ="container"><br>	 
+				<table align="center"   class =table>
+				<thead class="thead-dark"> 
+					<th scope="col" colspan="2" ><p align="center">INGRESAR PRODUCTO</p></th> 
+				</thead>
+				<tr><td>NOMBRE DEL MENU</td><td><input type="text" name="nombrepr" required></td> </tr>
+				<tr><td>DESCRIPCION </td><td><textarea name="descripcion" rows="2" cols="23" required ></textarea></td></tr>
+				<tr><td>PRECIO</td><td><input type="number" name="precio"  required></td></tr>
+				<tr><td>ESTADO</td><td><input type="number" name="estado"  required></td></tr>	
+				</table>
+				</div>	
+								<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
+								<input type="hidden" name="idbtn" value="1">
+								<p align="center"><input class="btn btn-success" type="submit" name="btnagregarmenu" value="AGREGAR"></p>	 
+				</form> 
+									
+ 			
  			</div>
  		</body>
  		</html>

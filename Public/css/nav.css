@@ -64,7 +64,7 @@ span{
 }
 .nav-bg {
 	/*Color de fondo del div que contiene nuestro nav , este div tiene la clase nav-vg*/
-	background-color: var(--secundario);
+	background-color: #007bff;
 	padding: 0.5rem;
 }
 .navegacion-principal {

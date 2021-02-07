@@ -15,13 +15,15 @@
 
 		</head>
 		<body>
-		<p align="center">LISTADO DE MENUS</p>
+		<div class= container>
+		<br>
 		<form action="controlVerificarAccesoMenu.php" method="POST">
 		<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
 		<input type="hidden" name="idbtn" value="1">
-		<p align="center"><input type="submit" name="btnaddmenu" value="AGREGAR MENU"></p>
+		<p align="center"><input type="submit" class="btn btn-success" name="btnaddmenu" value="AGREGAR MENU"></p>
 		</form>
-		<table border="1px" align="center" style="margin-top: 2rem">
+		<h3 align="center">LISTADO DE MENUS</h3>
+		<table border="1px" align="center" style="margin-top: 2rem" class =table>
 			<thead>
 				<tr>
 					<th>Nr°</th>
@@ -40,16 +42,20 @@
 			 	<td><?php echo $value['nombrepr']; ?> </td>
 			 	<td><?php echo $value['descripcion']; ?> </td>
 			 	<td><?php echo $value['precio']; ?> </td>
-			 	<td><?php echo $value['estado']; ?> </td>
-			 	<form  action="controlVerificarAccesoMenu.php" method="POST">			 	
-			 	<td><input type="submit" name="btneditar" value="Editar"></td>
+			 
+			 	<td><?php  
+				 if ($value['estado']==1) echo "<div class='badge bg-success'  >✔</div> ";
+				 else echo "<div class='badge bg-danger' >X</div>"; ?> </td> 
+			 	<form  action="controlVerificarAccesoMenu.php" method="POST">	
+				  	
+			 	<td><input type="submit" name="btneditar" class='material-icons' value='edit' style="transform:scale(0.8)"></td>
 			 	<input type="hidden" name="dni" value=" <?php echo $listaprivilegios[0]['dni']; ?> ">
 			 	<input type="hidden" name="idbtn" value="1">
 			 	<input type="hidden" name="idproducto" value=" <?php echo $value['idproducto']; ?> ">
 				<?php if ($value['estado']==0): ?>
-				<td><input type="submit" name="btnhabilitar" value="-Habilitar-"></td>
+				<td><input type="submit" name="btnhabilitar" value="-Habilitar-" class="btn btn-warning"></td>
 				<?php else: ?>
-				<td><input type="submit" name="btndeshabilitar" value="Deshabilitar"></td>
+				<td><input type="submit" name="btndeshabilitar" value="Deshabilitar" class="btn btn-warning"></td>
 				<?php endif ?>
 				</form>
 			 </tr>
@@ -58,7 +64,7 @@
 			 } ?>
 		</table>
 
-
+		</div>	 	
 			<?php //var_dump($listamenu); ?>
 			<?php //var_dump($listaprivilegios); ?>
 		</body>
