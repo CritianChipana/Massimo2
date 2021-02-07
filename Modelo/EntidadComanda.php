@@ -11,7 +11,7 @@ class EntidadComanda extends conexion{
  	}
 	public function detalleComandaID($idcomanda)
 	{
-		$consulta = "SELECT * FROM detallecomanda DC, producto PR, comanda C  WHERE DC.idcomanda = '$idcomanda' AND DC.idproducto=PR.idproducto AND DC.idcomanda=C.idcomanda";
+		$consulta = "SELECT * FROM detallecomanda DC, producto PR, comanda C, usuario U  WHERE DC.idcomanda = '$idcomanda' AND DC.idproducto=PR.idproducto AND DC.idcomanda=C.idcomanda AND C.dni=U.dni";
 		$resultado = mysqli_query($this->conectar(),$consulta);
 		$num_registros=mysqli_num_rows($resultado);
 

@@ -1,17 +1,7 @@
 <?php
-	if (isset($_POST['idbtn'])) 
-	{
-		if (isset($_POST['fom1'])) {
-			$dni=$_POST['dni'];
-			include_once("../Modelo/EdetalleUsuario.php");
-			include_once("../Vista/formGenerarComprobante.php");
-			$objDetalle = new EdetalleUsuario;
-			$listaPrivilegios = $objDetalle -> obtenerPrivilegios($dni);
-			$objComprobante= new formGenerarComprobante();
-			$objComprobante->formGenerarComprobanteShow($listaPrivilegios);
-		}
-		else if(isset($_POST['btnc'])){
-			$btnc="btnc";
+
+		if(isset($_POST['fom1'])){
+			$fom1="fom1";
 			$dni=$_POST['dni'];
 			include_once("../Modelo/EdetalleUsuario.php");
 			include_once("controlGenerarComprobante.php");
@@ -29,7 +19,7 @@
 				else{
 					include_once("../shared/formMensajeSistema.php");
 					$objMensaje = new formMensajeSistema;
-					$objMensaje -> formMensajeSistemaShow("NO SE ENCONTRARON COINCIDENCIAS","../Controlador/controlVerificarAccesoComprobante.php",$listaPrivilegios,$btnc,"");
+					$objMensaje -> formMensajeSistemaShow("NO SE ENCONTRARON COINCIDENCIAS","../Controlador/controlVerificarAccesoComprobante.php",$listaPrivilegios,$fom1,"","");
 				}
 			
 			}
@@ -237,7 +227,7 @@
 		// 	$objComprobante= new controlGenerarComprobante($idcomanda);
 		// 	// $objComprobante->detalleProformaID();
 		// }		
-	}
+
 
 else
 {
