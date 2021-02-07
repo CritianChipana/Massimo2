@@ -11,18 +11,19 @@
 			<!DOCTYPE html>
 			<html>
 			<head>
-				<title>DetalleComanda</title>
+				<title>Detalle Proforma</title>
 			</head>
 			<link rel="stylesheet" type="text/css" href="../public/css/main.css">
 			<body>
 			<?php
 				$num_comanda=count($detalleComanda);
 		//		echo $listaPrivilegios[0]['dni'];
-		//		var_dump($detalleComanda);
+				//var_dump($listaPrivilegios);
+
 				if ($btnTC=='Boleta') { ?>
 					<div style="text-align:center;">
-					<form action="controlVerificarAccesoComprobante.php" method="POST">	
-					<p align="center">DETALLE DE COMANDA</p>
+					<form action="controlVerificarAccesoComprobante.php" method="POST">
+					<p align="center">DETALLE DE PROFORMA</p>
 					<table border="1px" align="center" style="margin-top: 2rem">
 						<thead>
 							<tr><th colspan="4">--RESTAURANT MASSIMO--</th></tr>

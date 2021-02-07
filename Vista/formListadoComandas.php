@@ -21,7 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="../public/css/main.css">
 		<div >
 			<?php  // var_dump($listadocomandas); ?>
-			<?php   date_default_timezone_set("America/Lima"); echo date("Y") . date("m") . date("d"); ?>
+			<?php   date_default_timezone_set("America/Lima");  ?>
 			<br>
 		<p align="center">LISTADO DE PROFORMAS</p>
 		<form action="controlVerificarAccesoComprobante.php" method="POST">
@@ -65,7 +65,7 @@
 					<tr>
 					<td><?php echo $listadocomandas[$i]['idcomanda'] ?></td>
 					<td><?php echo $listadocomandas[$i]['dni'] ?></td>
-					<td><?php echo $listadocomandas[$i]['fecha'] ?></td>					
+					<td><?php echo date("Y")."-".date("m")."-".date("d");?></td>					
 					<td><?php echo $listadocomandas[$i]['mesanum'] ?></td>					
 					<td><?php echo $listadocomandas[$i]['estadocomprobante'] ?></td>
 					<form  action="controlVerificarAccesoComprobante.php" method="POST">

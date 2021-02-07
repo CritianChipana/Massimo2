@@ -37,7 +37,9 @@
             $updateestado="UPDATE comanda SET estadocomprobante=0 WHERE idcomanda='$idcomanda'";
             $resultado = mysqli_query($this->conectar(),$updateestado);
 
-            $updateestadomesa="UPDATE mesa SET estado=1 WHERE numero='$mesanum'";
+            $updateestadomesa="UPDATE mesa SET estado=1 WHERE idmesa='$mesanum'";
+            $resultado = mysqli_query($this->conectar(),$updateestadomesa);
+            $this->desconectar();
           
 		}
 		public function agregarBoletaP($idproforma){
