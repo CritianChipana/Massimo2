@@ -10,11 +10,11 @@
 			$listaPrivilegios = $objDetalle -> obtenerPrivilegios($dni);
 			$objComprobante= new controlGenerarComprobante();	
 			$objListarComandas=new formListadoComandas();			
-			if (isset($_POST['idcomanda'])) {
-			$idcomanda=$_POST['idcomanda'];
-			$buscarComandaID=$objComprobante->detalleComandaID($idcomanda);
-				if (is_array($buscarComandaID)) {
-				$objListarComandas->formListadoComandasShow($buscarComandaID,$listaPrivilegios);		
+			if (isset($_POST['idmesa'])) {
+			$idmesa=$_POST['idmesa'];
+			$buscarComandaMesa=$objComprobante->detalleComandaMesa($idmesa);
+				if (is_array($buscarComandaMesa)) {
+				$objListarComandas->formListadoComandasShow($buscarComandaMesa,$listaPrivilegios);		
 				}
 				else{
 					include_once("../shared/formMensajeSistema.php");

@@ -12,8 +12,12 @@
 		}
 
 		public function agregarmesa($capacidad){
-			
-			$consulta="INSERT INTO mesa (capacidad,estado) VALUES ('$capacidad',1)";
+
+			$consulta="SELECT * FROM mesa";
+			$resultado=mysqli_query($this->conectar(),$consulta);
+			$aciertos = mysqli_num_rows($resultado);
+			$numero=$aciertos+1;
+			$consulta="INSERT INTO mesa (numero,capacidad,estado) VALUES ('$numero','$capacidad',1)";
 			$resultado=mysqli_query($this->conectar(),$consulta);
 			$this->desconectar();
 
