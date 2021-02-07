@@ -60,17 +60,22 @@
 		}
 // ____________________________________________________________________________________________
 
-public function Listarmesas3(){
-	$sql = "SELECT * FROM mesa WHERE estado=1 ";
-	$resultado = mysqli_query($this->conectar(),$sql) or die("No se encotraron mesas");;
-	return $resultado;
-}
+		public function Listarmesas3(){
+			$sql = "SELECT * FROM mesa WHERE estado=1 ";
+			$resultado = mysqli_query($this->conectar(),$sql) or die("No se encotraron mesas");;
+			return $resultado;
+		}
 
-public function CambiarEstadoMesa($numeromesa){
-	$sql = "UPDATE mesa set estado=0 where numero=$numeromesa ";
-	$resultado = mysqli_query($this->conectar(),$sql);
-	
-}
+		public function CambiarEstadoMesa($numeromesa){
+			$sql = "UPDATE mesa set estado=0 where numero=$numeromesa ";
+			$resultado = mysqli_query($this->conectar(),$sql);
+			
+		}
+
+		public function liberarmesa($mesa){
+			$sql = "UPDATE mesa set estado=1 where numero=$mesa";
+			$resultado = mysqli_query($this->conectar(),$sql);
+		}
 
 	}
  ?>

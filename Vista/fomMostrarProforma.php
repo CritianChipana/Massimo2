@@ -31,7 +31,7 @@ class formMostrarProforma{
 				$dni=$listaprivilegios[$i]['dni'];
 			} ?>
 		 
-		 <form action="../Controlador/controlCerrarProforma.php" method="post">
+		 <form action="../Controlador/controlVerificarAccesoProforma.php" method="post">
 
 			<table>
 				<tr>
