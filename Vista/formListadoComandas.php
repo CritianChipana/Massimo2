@@ -40,7 +40,7 @@
 		<!-- <form action="controlVerificarAccesoComprobante.php" method="POST">
 			<p align="center">
 				<input type="hidden" name="idbtn" value="1">
-				<input type="hidden" name="dni" value=" <?php echo $listaPrivilegios[0]['dni']; ?> ">
+				<input type="hidden" name="dni" value=" <?php // echo $listaPrivilegios[0]['dni']; ?> ">
 				<input type="submit" name="fom1" value="Volver Atras">
 			</p>
 		</form> -->

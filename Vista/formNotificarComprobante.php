@@ -16,7 +16,6 @@
 			</head>
 			<body>
 				<p><?php echo "COMPROBANTE DE PAGO INGRESADO"; ?> </p>
-				
 			</body>
 			</html>
 <?php

@@ -119,15 +119,18 @@
 				if (isset($_POST['idcomanda'])) {
 				$idcomanda=$_POST['idcomanda'];
 				include_once("../Modelo/EdetalleUsuario.php");
-				include_once("../Vista/formNotificarComprobante.php");
+				include_once("../Vista/formBienvenida.php");
 				$objDetalle = new EdetalleUsuario;
 				$listaPrivilegios = $objDetalle -> obtenerPrivilegios($dni);
 					if (isset($_POST['btnCOB'])) {
 						include_once("controlBoleta.php");
 						$objBoleta=new controlBoleta();
 						$objAgregar=$objBoleta->agregarBoletaC($idcomanda);
-						$objConfirmacion=new formNotificarComprobante();
-						$objConfirmacion->formNotificarComprobanteShow($listaPrivilegios);				
+						            echo     "<script>
+                    alert('Se genero el comprobante');
+                    </script>";
+						$objConfirmacion=new formBienvenida();
+						$objConfirmacion->formBienvenidaShow($listaPrivilegios);				
 					}
 					else if(isset($_POST['btnCOF'])){
 						$ruc=$_POST['ruc'];
