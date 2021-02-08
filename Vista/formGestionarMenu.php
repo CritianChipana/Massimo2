@@ -52,9 +52,9 @@
 			 	<input type="hidden" name="idbtn" value="1">
 			 	<input type="hidden" name="idproducto" value=" <?php echo $value['idproducto']; ?> ">
 				<?php if ($value['estado']==0): ?>
-				<td><input type="submit" name="btnhabilitar" value="-Habilitar-" class="btn btn-warning"></td>
+				<td><input type="submit" name="btnhabilitar" value="CAMBIAR ESTADO" class="btn btn-warning"></td>
 				<?php else: ?>
-				<td><input type="submit" name="btndeshabilitar" value="Deshabilitar" class="btn btn-warning"></td>
+				<td><input type="submit" name="btndeshabilitar" value="CAMBIAR ESTADO" class="btn btn-warning"></td>
 				<?php endif ?>
 				</form>
 			 </tr>

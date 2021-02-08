@@ -58,15 +58,15 @@ class controlGestionarUsuario
         if ( strlen($nombre) < 1 ||  strlen($apellidos) < 1 ||
         strlen($dni) != 8|| strlen($direccion) < 5 ||
         $i == 0 || strlen($password) <4 ) {
-        $mensaje = "Correcciones <br>";
-        if (strlen($nombre) < 1 ) { $mensaje .= "El campo nombre esta vacio.<br>";
+        $mensaje = "Datos invalidos <br>";
+        if (strlen($nombre) < 1 ) { $mensaje .= "El  nombre esta vacio.<br>";
         }
-        if (strlen($apellidos) < 1) {$mensaje .= "El campo apellidos esta vacio <br>";
+        if (strlen($apellidos) < 1) {$mensaje .= "El apellidos esta vacio <br>";
         }
-        if (strlen($dni) != 8 ) {$mensaje .= "Escriba solo 8 caracterres.<br>";$dni="";
+        if (strlen($dni) != 8 ) {$mensaje .= "El dni son 8 caracterres.<br>";$dni="";
         }
-        if (strlen($direccion) < 4 ) {
-            $mensaje .= "Escriba más de cinco caracterres en el campo direccion.<br>";
+        if (strlen($direccion) < 1 ) {
+            $mensaje .= "La direccion esta vacio.<br>";
         }
         if ($i == 0) {
             $mensaje .= "Seleccione como minimo un privilegios<br>";
@@ -121,7 +121,7 @@ class controlGestionarUsuario
                 $formNuevoUsuario = new formUsuarioPrivilegios();
                 $formNuevoUsuario -> formUsuarioPrivilegiosShow($nuevoUsuario, $privilegiosAsignados, $privilegiosSistema, $mensaje);
             } else {
-                $mensaje = "SE HA GUARDADO LOS DATOS DEL EMPLEADO EN LA BASE DE DATOS.";
+                $mensaje = "Se ha guardado los datos del usuario";
                 $usuarioPrivilegiosD = new usuarioPrivilegios();
 
                 if ($dniActual != NULL) {
