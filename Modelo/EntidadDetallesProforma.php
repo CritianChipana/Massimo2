@@ -2,10 +2,10 @@
 include_once("../Controlador/conexion.php");
 class EntidadDetallesProforma extends conexion{
 
-    public function listarProforma($idcomanda){
+    public function listarProforma($idproforma){
 
-        $sql = "SELECT * from comanda C, detallecomanda D, producto P 
-        where C.idcomanda =$idcomanda and D.idproducto = P.idproducto and C.idcomanda = D.idcomanda";
+        $sql = "SELECT * from proforma C, detalleproforma D, producto P 
+        where C.idproforma =$idproforma and D.idproducto = P.idproducto and C.idproforma = D.idproforma";
         $resultado =mysqli_query($this->conectar(),$sql);
         $this->desConectar();
 
@@ -18,7 +18,7 @@ class EntidadDetallesProforma extends conexion{
 
     // _______________________________________________________________
     public function EliminarPedido($iddetalleProforma){
-        $sql=" DELETE FROM detallecomanda WHERE iddetallecomanda= $iddetalleProforma ";
+        $sql=" DELETE FROM detalleproforma WHERE iddetalleproforma= $iddetalleProforma ";
         $resultado = mysqli_query($this->conectar(),$sql);
         return $resultado;
     }
@@ -26,10 +26,10 @@ class EntidadDetallesProforma extends conexion{
 
 // _____________________________________________________________
 
-public function RegistraDetalleProforma($numero,$cantidades,$precios,$idproductos,$idcomanda){
+public function RegistraDetalleProforma($numero,$cantidades,$precios,$idproductos,$idproforma){
     for($i=0;$i<$numero;$i++){
-        $sql="INSERT INTO detallecomanda(idcomanda, idproducto, cantidad, precio)
-        VALUES ('$idcomanda','$idproductos[$i]','$cantidades[$i]','$precios[$i]')
+        $sql="INSERT INTO detalleproforma(idproforma, idproducto, cantidad, precio)
+        VALUES ('$idproforma','$idproductos[$i]','$cantidades[$i]','$precios[$i]')
         ";
         $resultado = mysqli_query($this->conectar(),$sql) or  die ("Error Resgistrando Detalle Proforma $i") ;
         $this->desConectar();
@@ -42,6 +42,7 @@ public function RegistraDetalleProforma($numero,$cantidades,$precios,$idproducto
 }
 
 }
-// SELECT * from comanda C, detallecomanda D, producto P where C.idcomanda =10 and
-//  D.idProducto = P.idProducto and C.idcomanda = D.idcomanda
+// SELECT * from proforma C, detalleproforma D, producto P where C.idproforma =10 and
+//  D.idProducto = P.idProducto and C.idproforma = D.idproforma
+// .
 ?>

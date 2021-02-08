@@ -7,9 +7,9 @@ class formGenerarProforma{
         
     }
     
-    public function formGenerarProformashow($listaprivilegios,$listaproductos){
-        include_once("../Modelo/EntidadProforma.php");
-        include_once("../Modelo/EntidadMesa.php");
+    public function formGenerarProformashow($listaprivilegios,$listaproductos,$Lproductos,$mesas){
+    
+
         ?>
         <!DOCTYPE html>
 		<html>
@@ -76,11 +76,7 @@ class formGenerarProforma{
         
             
 <!-- __________________________________________________________________________________________ -->
-            <!-- include_once(); -->
-            <?php 
-                $Lmesas = new EntidadMesa;
-                $mesas = $Lmesas->Listarmesas3();
-            ?> 
+        
             <p align="center"><br>
             <label for="">Numero de Mesa:</label>
             <select name="mesa" id="">
@@ -110,9 +106,7 @@ class formGenerarProforma{
 <!-- ____________________________________________________________________________________ -->
             <?php
                
-                $productos = new EntidadProforma;
-                $Lproductos = $productos -> ListarProformashow($dni);
-
+               
             ?> 
             <div class="col-lg-6">
              <div   class="modal-body">   
@@ -142,9 +136,9 @@ class formGenerarProforma{
                                 <th class="fila"><?php echo $row['total'];?></th>
                                 <!-- <th class="fila"><?php //echo $row['desea'];?></th> -->
                   
-                                <th><div ><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=1&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="add_box"></a></div></th>
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=2&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="delete"></a></div></th>
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=3&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="class"></a></div></th>
+                                <th><div ><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=1&idproforma=<?php echo $row['idproforma']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="add_box"></a></div></th>
+                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=2&idproforma=<?php echo $row['idproforma']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="delete"></a></div></th>
+                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=3&idproforma=<?php echo $row['idproforma']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="class"></a></div></th>
                                  
                             </tr>
                             <?php } ?>

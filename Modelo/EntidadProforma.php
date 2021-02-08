@@ -29,8 +29,8 @@ class EntidadProforma extends conexion{
                   }
       }
 // _______________________________________________________________________________________________________
-      public function ObtenerTotal($idcomanda){
-            $sql = "SELECT total from comanda where idcomanda=$idcomanda";
+      public function ObtenerTotal($idproforma){
+            $sql = "SELECT total from proforma where idproforma=$idproforma";
             $Resultado = mysqli_query($this->conectar(),$sql );
             $this->desConectar();
             $total = mysqli_fetch_assoc($Resultado);
@@ -42,8 +42,8 @@ class EntidadProforma extends conexion{
     
         }
     
-        public function ActualizarTotal($idcomanda,$newimporte){
-            $sql = "UPDATE comanda SET total= $newimporte where idcomanda = $idcomanda";
+        public function ActualizarTotal($idproforma,$newimporte){
+            $sql = "UPDATE proforma SET total= $newimporte where idproforma = $idproforma";
             $resultado = mysqli_query($this->conectar(),$sql);
             $this->desConectar();
             if($resultado){
@@ -58,18 +58,18 @@ class EntidadProforma extends conexion{
 
 public function ListarProformashow($dni){
        
-      $sql = "SELECT * FROM comanda where estadocomprobante = 1 and dni = $dni ";
+      $sql = "SELECT * FROM proforma where estadocomprobante = 1 and dni = $dni ";
       $resultado = mysqli_query($this->conectar(),$sql) or die ("Error Buscando Proforma");
       return $resultado;
 
   
 }
 
-public function Cancelar($idcomanda){
-//   $sql = "UPDATE comanda SET estadocomprobante=0 where idcomanda=$idcomanda";
-  $sql = "DELETE from comanda WHERE idcomanda = $idcomanda";
+public function Cancelar($idproforma){
+//   $sql = "UPDATE proforma SET estadocomprobante=0 where idproforma=$idproforma";
+  $sql = "DELETE from proforma WHERE idproforma = $idproforma";
   $resultado = mysqli_query($this->conectar(),$sql);
-  $sql2="DELETE FROM detallecomanda where idcomanda = $idcomanda";
+  $sql2="DELETE FROM detalleproforma where idproforma = $idproforma";
   $resultado2 = mysqli_query($this->conectar(),$sql2);
 
   if($resultado){
@@ -79,9 +79,9 @@ public function Cancelar($idcomanda){
   }
 }
 
-public function ListarPedido($idcomanda){
-  $sql="SELECT * FROM comanda C, detallecomanda D, producto P where C.idcomanda =$idcomanda and D.idproducto = P.idproducto
-   and C.estadocomprobante =1 and C.idcomanda =D.idcomanda" or die ("Error Buscando Proforma");
+public function ListarPedido($idproforma){
+  $sql="SELECT * FROM proforma C, detalleproforma D, producto P where C.idproforma =$idproforma and D.idproducto = P.idproducto
+   and C.estadocomprobante =1 and C.idproforma =D.idproforma" or die ("Error Buscando Proforma");
   $resultado =mysqli_query($this->conectar(),$sql);
   return $resultado;
 
@@ -91,14 +91,14 @@ public function ListarPedido($idcomanda){
 
 public function RegistrarProforma($dni,$fecha,$estado,$dnicliente,$empleado,$importe,$mesa){
       $sql = "INSERT INTO 
-              comanda(empleado, dni, fecha, idcliente, total, estadocomprobante,mesanum)
+              proforma(empleado, dni, fecha, idcliente, total, estadocomprobante,mesanum)
               VALUES('$empleado','$dni','$fecha','$dnicliente','$importe','$estado','$mesa')";
       // echo $sql;
       $resultado = mysqli_query($this->conectar(),$sql) or die ("Error Resgistrando Proforma");
-      // $idcomanda2="SELECT max(idcomanda) from comanda";
-      // $Ridcomanda1=mysqli_query($this->conectar(),$idcomanda2);
+      // $idproforma2="SELECT max(idproforma) from proforma";
+      // $Ridproforma1=mysqli_query($this->conectar(),$idproforma2);
       $this->desConectar();
-      // $Ridcomanda2 = mysqli_fetch_assoc($Ridcomanda1);
+      // $Ridproforma2 = mysqli_fetch_assoc($Ridproforma1);
       if($resultado){
           return 1;
       }else{
@@ -108,8 +108,8 @@ public function RegistrarProforma($dni,$fecha,$estado,$dnicliente,$empleado,$imp
   }
 
   public function BuscarProforma($idcliente,$fecha){
-      // $sql = "SELECT idcomanda FROM comanda WHERE idcliente = '$idcliente' and fecha = '$fecha' ";
-      $sql2 = "SELECT max(idcomanda) from comanda";
+      // $sql = "SELECT idproforma FROM proforma WHERE idcliente = '$idcliente' and fecha = '$fecha' ";
+      $sql2 = "SELECT max(idproforma) from proforma";
       $resultado = mysqli_query($this->conectar(),$sql2) or die ("Error Buscando Proforma");
       $this->desConectar();
       $dato = mysqli_fetch_assoc($resultado);
@@ -127,3 +127,4 @@ public function RegistrarProforma($dni,$fecha,$estado,$dnicliente,$empleado,$imp
 
  }
  ?>
+<!-- a -->

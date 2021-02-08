@@ -73,12 +73,15 @@ if(isset($_POST['a'])){
         }
     }
 
+
     // echo $importe."-";
     if($negativo!=0 || $cont == 0 || $cont2==0 || $cont!=$cont2 || $mesa=="mesa"){
         echo    "<script>
                     alert('LLENE LOS CAMPOS CORRECTAMENTE');
                 </script>";
         // echo $negativo."-".$cont."-".$cont2."-".$contadorcliente."-".$contadorFecha;
+        include_once("../Modelo/EntidadProforma.php");
+        include_once("../Modelo/EntidadMesa.php");
         include_once("../Vista/formGenerarProforma.php");
         include_once("../Modelo/EntidadProducto.php");
         include_once("../Modelo/EdetalleUsuario.php");
@@ -87,7 +90,13 @@ if(isset($_POST['a'])){
         $objetoEntidad = new EntidadProducto;
         $objetoProforma = new formGenerarProforma();
         $listaproductos = $objetoEntidad->listar_producto();
-        $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos);
+        $Lmesas = new EntidadMesa;
+        $mesas = $Lmesas->Listarmesas3();
+        $productos = new EntidadProforma;
+        $Lproductos = $productos -> ListarProformashow($dni);
+    
+        $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos,$Lproductos,$mesas);
+        // $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos);
     }else{
        //insertar comanda
     // public function RegistrarProforma($dni,$fecha,$estado,$dnicliente,$empleado,$importe)
@@ -127,7 +136,7 @@ if(isset($_POST['a'])){
         }
     }
 
-   
+//    a
 
 }else{
     include_once("../shared/formMensajeSistema.php");

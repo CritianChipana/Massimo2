@@ -46,6 +46,8 @@ if(isset($_POST["aa"])){
     include_once("../Vista/formGenerarProforma.php");
     include_once("../Modelo/EdetalleUsuario.php");
     include_once("../Modelo/EntidadDetallesProforma.php");
+    include_once("../Modelo/EntidadProforma.php");
+    include_once("../Modelo/EntidadMesa.php");
 
     if($negativo!=0 || $cont == 0 || $cont2==0 || $cont!=$cont2 ){
         echo    "<script>
@@ -60,7 +62,14 @@ if(isset($_POST["aa"])){
         $objetoEntidad = new EntidadProducto;
         $objetoProforma = new formGenerarProforma();
         $listaproductos = $objetoEntidad->listar_producto();
-        $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos);
+
+        $Lmesas = new EntidadMesa;
+        $mesas = $Lmesas->Listarmesas3();
+        $productos = new EntidadProforma;
+        $Lproductos = $productos -> ListarProformashow($dni);
+
+        $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos,$Lproductos,$mesas);
+        // a
     }else{
 
 
@@ -88,8 +97,13 @@ if(isset($_POST["aa"])){
             $objetoEntidad = new EntidadProducto;
             $objetoProforma = new formGenerarProforma();
             $listaproductos = $objetoEntidad->listar_producto();
-
-            $objetoProforma ->formGenerarProformaShow($listaprivilegios,$listaproductos);
+            $Lmesas = new EntidadMesa;
+            $mesas = $Lmesas->Listarmesas3();
+            $productos = new EntidadProforma;
+            $Lproductos = $productos -> ListarProformashow($dni);
+    
+            $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos,$Lproductos,$mesas);
+            // $objetoProforma ->formGenerarProformaShow($listaprivilegios,$listaproductos);
 
         }else{
             echo    "<script>
@@ -99,7 +113,13 @@ if(isset($_POST["aa"])){
             $objetoEntidad2 = new EntidadProducto;
             // $objetoProforma = new formAgregarPlatillo();
             $listaproductos = $objetoEntidad2->listar_producto();
-            $objetoC -> formGenerarProformaShow($listaprivilegios,$listaproductos);
+            $Lmesas = new EntidadMesa;
+            $mesas = $Lmesas->Listarmesas3();
+            $productos = new EntidadProforma;
+            $Lproductos = $productos -> ListarProformashow($dni);
+    
+            $objetoProforma ->formGenerarProformashow($listaprivilegios,$listaproductos,$Lproductos,$mesas);
+            // $objetoC -> formGenerarProformaShow($listaprivilegios,$listaproductos);
         }
     }
 

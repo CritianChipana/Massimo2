@@ -10,9 +10,8 @@
      include_once("../Vista/formListarPedidos.php");
      include_once("../Modelo/EntidadMesa.php");
 
-
     $dni = $_GET['dni']; 
-    $idcomanda = $_GET['idcomanda'];
+    $idproforma = $_GET['idproforma'];
     $mesa = $_GET['mesa'];
      if($_GET['b']==1){
 
@@ -21,12 +20,12 @@
          $objetoEntidad2 = new EntidadProducto;
          $objetoProforma = new formAgregarPlatillo();
          $listaproductos = $objetoEntidad2->listar_producto();
-         $objetoProforma -> formSeleccionarPlatillo($listaprivilegios,$listaproductos,$idcomanda);
+         $objetoProforma -> formSeleccionarPlatillo($listaprivilegios,$listaproductos,$idproforma);
      }else if($_GET['b']==2){
         $opbjetocancelar  = new EntidadProforma;
         $mesaobjeto = new EntidadMesa;
         $mesaobjeto->liberarmesa($mesa);
-        $opbjetocancelar ->Cancelar($idcomanda);
+        $opbjetocancelar ->Cancelar($idproforma);
         echo    "<script>
         alert('Se Cancelo el pedido');
         </script>";
@@ -34,17 +33,22 @@
         $objetoC = new formGenerarProforma;
         $objetoEntidad2 = new EntidadProducto;
 
-
+// a
         $listaprivilegios =$objetoEntidad -> obtenerPrivilegios($dni);
         $listaproductos = $objetoEntidad2->listar_producto();
-        $objetoC -> formGenerarProformashow($listaprivilegios,$listaproductos);
+
+        $Lmesas = new EntidadMesa;
+        $mesas = $Lmesas->Listarmesas3();
+        $productos = new EntidadProforma;
+        $Lproductos = $productos -> ListarProformashow($dni);
+        $objetoC -> formGenerarProformashow($listaprivilegios,$listaproductos,$Lproductos,$mesas);
      }else if($_GET['b']==3){
          $objetoEntidad = new EdetalleUsuario;
          $listaprivilegios =$objetoEntidad -> obtenerPrivilegios($dni);
          $pedido = new EntidadProforma;
-         $listapedidos = $pedido ->ListarPedido($idcomanda);
+         $listapedidos = $pedido ->ListarPedido($idproforma);
          $verpedido = new formListarPedido;
-         $verpedido -> formListarPedido2($listaprivilegios,$listapedidos,$idcomanda);
+         $verpedido -> formListarPedido2($listaprivilegios,$listapedidos,$idproforma);
      }
 
      if($_GET['b']=='E'){
@@ -54,9 +58,9 @@
         $objetoEntidad = new EdetalleUsuario;
         $listaprivilegios =$objetoEntidad -> obtenerPrivilegios($dni);
         $pedido = new EntidadProforma;
-        $listapedidos = $pedido ->ListarPedido($idcomanda);
+        $listapedidos = $pedido ->ListarPedido($idproforma);
         $verpedido = new formListarPedido;
-        $verpedido -> formListarPedido2($listaprivilegios,$listapedidos,$idcomanda);
+        $verpedido -> formListarPedido2($listaprivilegios,$listapedidos,$idproforma);
      }
 
 }else{
