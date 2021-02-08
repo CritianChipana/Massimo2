@@ -1,7 +1,7 @@
 <?php
 class formListarPedido{
 
-    public function formListarPedido2($listaprivilegios,$listaproductos,$idcomanda){
+    public function formListarPedido2($listaprivilegios,$listaproductos,$idproforma){
         ?>
         <!DOCTYPE html>
 		<html>
@@ -48,7 +48,7 @@ class formListarPedido{
                     <td><input type="number" name="<?php echo $row['idproducto'];?>" value="<?php echo $row['cantidad']; ?>" id="" disabled></td>
                     <!-- <td><input type="text" value="<?php //echo $row['idproducto'] ?>" name="<?php echo $row['idproducto'];?>i" id="" hidden></td> -->
                     <!-- <td><input type="checkbox" value="<?php echo $row['precio'];?>" name="<?php echo $row['idproducto'];?>c" id=""></td> -->
-                    <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&idcomanda=<?php echo $idcomanda?>&b=E&iddetalle=<?php echo $row['iddetallecomanda']?>">Quitar Pedidos</a></div></th>
+                    <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&idproforma=<?php echo $idproforma?>&mesa=<?php  echo $row['mesanum']; ?>&b=E&iddetalle=<?php echo $row['iddetalleproforma']?>">Quitar Pedidos</a></div></th>
                     
                 </tr>
                 <?php
@@ -58,7 +58,7 @@ class formListarPedido{
             </table>
             <br><hr><br>
             <input type="text" name="tamano" value="<?php echo $cont ?>" id="" hidden>
-            <input type="text" name="idcomanda" value="<?php echo $idcomanda ?>" id="" hidden>
+            <input type="text" name="idproforma" value="<?php echo $idproforma ?>" id="" hidden>
             <input type="text"  value="<?php echo $dni?>" name="dni"  hidden >
             <!-- <input type="text"  value="<?php ?>" name="empleado"  hidden > -->
             <input type="text"  value="<?php echo ""; ?>" name="apellido"  hidden >
