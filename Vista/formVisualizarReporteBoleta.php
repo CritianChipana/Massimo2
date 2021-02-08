@@ -59,7 +59,7 @@
                        <!-- <th scope="col">#</th>-->
                         <th scope="col" style="text-align: center;">Código</th>
                         <th scope="col" style="text-align: center;">Fecha </th>
-                        <th scope="col" style="text-align: center;">Cliente</th>
+                        <th scope="col" style="text-align: center;">Mesero</th>
                         <th scope="col" style="text-align: center;">Total</th>
                         </tr>
                     </thead>
