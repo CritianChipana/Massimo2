@@ -28,7 +28,7 @@ class  formGenerarReportedeVentas{
                             $objNav->navShow($listaPrivilegios);
                 ?>
                 <br>
-            <h2> <center>Búsqueda de Facturas y boletas</center></h2>
+            <h2> <center>Búsqueda de Boletas</center></h2>
             <nav class="navbar navbar-light " style="background-color: #bbdefb;">
                 <div class="container-fluid">
                     <!-- <h2> <center>Búsqueda de Facturas y boletas</center></h2> -->
@@ -48,7 +48,7 @@ class  formGenerarReportedeVentas{
 
                 </div>
                 <div class="col-4 col-md-4 col-lg-4">
-                    <form  method="post" action="../Controlador/controlOpcionReporte.php" id="form_consultar_boletas">
+                    <form  method="post" action="../Controlador/controlGenerarReportedeVentas.php" id="form_consultar_boletas">
                         <div >
                             <div class="mb-3">
                                 <label for="fecha_inicio" class="form-label">Fecha inicial</label>
@@ -68,9 +68,9 @@ class  formGenerarReportedeVentas{
                             <div>
 
                                 <div style="display: flex; float:right;">
-                                    <input type="submit" class="btn btn-info"  formaction="../Controlador/controlOpcionReporte.php" name="reporte_boleta" buscar value="Reporte Boleta"  onclick="seleccionBoleta();">
+                                    <input type="submit" class="btn btn-info"  formaction="../Controlador/controlGenerarReportedeVentas.php" name="reporte_boleta" buscar value="Reporte Boleta"  onclick="seleccionBoleta();">
                                     <div style="width: 32px;"></div>
-                                    <input type="submit" class="btn btn-info"  name="reporte_factura" buscar value="Reporte Factura"  onclick="seleccionFactura();">
+                                   
 
                                 </div>
                                 
@@ -93,10 +93,6 @@ class  formGenerarReportedeVentas{
                    
                 }
 
-                function seleccionFactura(){
-                    document.getElementById("seleccion").value="F"; 
-
-                }
             </script>
             
         </body>

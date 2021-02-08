@@ -2,9 +2,7 @@
 	include_once("../Controlador/conexion.php");
 	class EntidadBoleta extends conexion{
 
-	/*	public function listarBoleta(){
-
-		} */
+	
 		public function agregarBoletaP($idproforma){
             
 			$consulta = "SELECT * FROM detalleproforma DC, producto PR, proforma C  WHERE DC.idproforma = '$idproforma' AND DC.idproducto=PR.idproducto AND DC.idproforma=C.idproforma";
@@ -45,7 +43,7 @@
             $this->desconectar();
           
 		}
-/*		public function agregarBoletaP($idproforma){
+		/*public function agregarBoletaP($idproforma){
 			$consulta="SELECT * FROM detalleproforma DP, producto PR, proforma P, usuario U WHERE DP.idproforma = '$idproforma' AND DP.idproducto=PR.idproducto AND DP.idproforma=P.idproforma AND P.dni=U.dni ";
             $resultado = mysqli_query($this->conectar(),$consulta);
             $num_registros = mysqli_num_rows($resultado);
@@ -76,7 +74,7 @@
             $updateestado="UPDATE proforma SET estadocomprobante=0 WHERE idproforma='$idproforma'";
             $resultado = mysqli_query($this->conectar(),$updateestado);
             $this->desconectar();
-        }
+        }*/
          
         function boletasentreFechas($fechaInicial,$fechaFinal)
         {
@@ -86,7 +84,7 @@
 			$this->desconectar();
 			return $resultado;
             
-        }*/
+        }
 
 
 	} 

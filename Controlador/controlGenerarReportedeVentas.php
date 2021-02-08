@@ -27,8 +27,7 @@ $listaprivilegios = $privilegio->obtenerPrivilegios($dni);
         $objfrb->mostrarBoletas($fechaInicio,$fechaFinal,$listaprivilegios);
     }
     
-// .
-//dasdasdadasd
+
 
 
 

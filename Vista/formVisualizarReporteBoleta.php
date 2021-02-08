@@ -70,8 +70,8 @@
                          <tr>
                         
                         <td style="text-align: center;"><?php echo ($filaEncontrada[$i]['idboleta']) ?></td>
-                        <td  style="text-align: center;"><?php echo ($filaEncontrada[$i]['fechaentrega']) ?></td>
-                        <td style="text-align: center;"><?php echo ($filaEncontrada[$i]['idcliente']) ?></td>
+                        <td  style="text-align: center;"><?php echo ($filaEncontrada[$i]['fecha']) ?></td>
+                        <td style="text-align: center;"><?php echo ($filaEncontrada[$i]['dni']) ?></td>
                         <td style="text-align: center;"><?php echo ($filaEncontrada[$i]['total']) ?></td>
                         </tr>
                         
@@ -98,7 +98,7 @@
                         <div style="width: 32px;;"></div>
                         <div class="col-2 col-md-2">
                             <form action="controlVerificarAccesoReportedeVentas.php" method="post">
-                                <input name="p-7" type="hidden"/>
+                                <input name="p-8" type="hidden"/>
                                 <input type="hidden" name="dni" value="<?php echo $dni; ?>">   
                                 <button type="submit" style="width: 100%;" class="btn btn-secondary btn-sm" >Atras</button>
                             </form>
@@ -135,12 +135,12 @@
         else{
             include_once("../shared/formMensajeSistema.php");
             $objetoMensaje = new formMensajeSistema;
-            $objetoMensaje -> formMensajeSistemaShow2("Fechas incorrectas","<a href='../index.php'>Inicio</a>");
+            $objetoMensaje -> formMensajeSistemaShow3("Fechas incorrectas","<a href='../Controlador/controlVerificarAccesoReportedeVentas.php'>Inicio</a>",$dni);
         }
 
         
    }
  }
-// .
+
 
 ?>

@@ -3,7 +3,7 @@
 // VerificarbotonGeneratReportedeVentas
 
 
-if(isset($_POST['p-7']) || isset($_POST['dni'])){
+if($_POST['dni']){
     $dni = $_POST['dni'];
     include_once("../Vista/formGenerarReportedeVentas.php");
     include_once("../Modelo/EdetalleUsuario.php");
@@ -19,6 +19,6 @@ if(isset($_POST['p-7']) || isset($_POST['dni'])){
     $objetoMensaje -> formMensajeSistemaShow2("Acceso Incorrecto","<a href='../index.php'>Ingresar Usuario</a>");
     
 }
-// .
+
 ?>
 

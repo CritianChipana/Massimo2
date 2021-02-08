@@ -16,7 +16,7 @@
 	          <div class="nombre">
 	            <a href="principal.php">
 	              <span>RESTAURANT</span>
-	              <span class="color-logo"> SASON Y SABOR</span>  
+	              <span class="color-logo"> SAZÓN Y SABOR</span>  
 	            </a>
 	          </div>
 	          <div class="informacion">

@@ -85,6 +85,30 @@ class formMensajeSistema
 	}
 
 
+	public function formMensajeSistemaShow3($mensaje,$link,$dni)
+	{
+		?>
+			<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+			<html xmlns="http://www.w3.org/1999/xhtml">
+			<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+			<title>Mensaje del sistema</title>
+			</head>
+			
+			<body>
+				<form action="controlVerificarAccesoReportedeVentas.php" method="post">
+					<h3 style="text-align: center;"><?php echo $mensaje; ?></h3>
+					<input type="hidden" name="dni" value="<?php echo $dni; ?>">   
+					<button type="submit" style="margin-left: 48%;" class="btn btn-secondary btn-sm" >Atras</button>
+				</form>
+				
+			</body>
+			</html>
+		
+		<?php		
+	}
+
+
 }
 ?>
 
