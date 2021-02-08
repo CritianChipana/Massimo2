@@ -142,9 +142,9 @@ class formGenerarProforma{
                                 <th class="fila"><?php echo $row['total'];?></th>
                                 <!-- <th class="fila"><?php //echo $row['desea'];?></th> -->
                   
-                                <th><div ><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=1&idcomanda=<?php echo $row['idcomanda']?>"><input type="submit" class="material-icons" value="add_box"></a></div></th>
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=2&idcomanda=<?php echo $row['idcomanda']?>"><input type="submit" class="material-icons" value="delete"></a></div></th>
-                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=3&idcomanda=<?php echo $row['idcomanda']?>"><input type="submit" class="material-icons" value="class"></a></div></th>
+                                <th><div ><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=1&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="add_box"></a></div></th>
+                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=2&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="delete"></a></div></th>
+                                <th><div><a href="controlAgregarPlatillo.php?dni=<?php echo $dni?>&b=3&idcomanda=<?php echo $row['idcomanda']?>&mesa=<?php  echo $row['mesanum']; ?>"><input type="submit" class="material-icons" value="class"></a></div></th>
                                  
                             </tr>
                             <?php } ?>

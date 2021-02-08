@@ -4,7 +4,7 @@ class conexion
 	protected function conectar()
 	{ 
 		// $a =mysqli_connect('localhost','root','','rata');
-		$a =mysqli_connect('localhost','root','','sazon');
+		$a =mysqli_connect('localhost','root','12345678','massimo-luis');
 		// mysqli_select_db('sistema');
 		return $a;
 	}
