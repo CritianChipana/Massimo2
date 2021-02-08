@@ -5,13 +5,13 @@
         public function listarBoleta(){
 
         }
-        public function agregarBoletaC($idcomanda){
-            $objBoletas = new EntidadBoleta();
-            $respuesta =$objBoletas ->agregarBoletaC($idcomanda);
-        }
         public function agregarBoletaP($idproforma){
             $objBoletas = new EntidadBoleta();
             $respuesta =$objBoletas ->agregarBoletaP($idproforma);
         }
+    /*    public function agregarBoletaP($idproforma){
+            $objBoletas = new EntidadBoleta();
+            $respuesta =$objBoletas ->agregarBoletaP($idproforma);
+        }*/
     }
  ?>

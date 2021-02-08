@@ -2,12 +2,12 @@
 	include_once("../Controlador/conexion.php");
 	class EntidadBoleta extends conexion{
 
-		public function listarBoleta(){
+	/*	public function listarBoleta(){
 
-		}
-		public function agregarBoletaC($idcomanda){
+		} */
+		public function agregarBoletaP($idproforma){
             
-			$consulta = "SELECT * FROM detalleComanda DC, producto PR, Comanda C  WHERE DC.idcomanda = '$idcomanda' AND DC.idproducto=PR.idproducto AND DC.idcomanda=C.idcomanda";
+			$consulta = "SELECT * FROM detalleproforma DC, producto PR, proforma C  WHERE DC.idproforma = '$idproforma' AND DC.idproducto=PR.idproducto AND DC.idproforma=C.idproforma";
             $resultado = mysqli_query($this->conectar(),$consulta);
             $num_registros = mysqli_num_rows($resultado);
             for($i = 0; $i < $num_registros; $i++){
@@ -24,29 +24,29 @@
 
             $insertdetalleboleta="INSERT INTO detalleboleta (idboleta,idproducto,cantidad,precio) VALUES ";
                 foreach ($fila as $res){
-                    $idcomanda=$res['idcomanda'];
+                    $idproforma=$res['idproforma'];
                     $idproducto=$res['idproducto'];
                     $cantidad=$res['cantidad'];
                     $precio=$res['precio'];
                     $precio=$res['precio']*$res['cantidad'];
-                     $insertdetalleboleta=$insertdetalleboleta."('$idcomanda','$idproducto','$cantidad','$precio'),";
+                     $insertdetalleboleta=$insertdetalleboleta."('$idproforma','$idproducto','$cantidad','$precio'),";
                 }
                 $insertdetalleboleta=substr($insertdetalleboleta, 0, -1);
             $resultado = mysqli_query($this->conectar(),$insertdetalleboleta);
 
-            $deletedetallecomanda="DELETE FROM detallecomanda WHERE idcomanda='$idcomanda'";
-            $resultado = mysqli_query($this->conectar(),$deletedetallecomanda);
+            $deletedetalleproforma="DELETE FROM detalleproforma WHERE idproforma='$idproforma'";
+            $resultado = mysqli_query($this->conectar(),$deletedetalleproforma);
 
-            $deletecomanda="DELETE FROM comanda WHERE idcomanda='$idcomanda'";
-            $resultado = mysqli_query($this->conectar(),$deletecomanda);
+            $deleteproforma="DELETE FROM proforma WHERE idproforma='$idproforma'";
+            $resultado = mysqli_query($this->conectar(),$deleteproforma);
 
             $updateestadomesa="UPDATE mesa SET estado=1 WHERE numero='$mesanum'";
             $resultado = mysqli_query($this->conectar(),$updateestadomesa);
             $this->desconectar();
           
 		}
-		public function agregarBoletaP($idproforma){
-			$consulta="SELECT * FROM detalleProforma DP, producto PR, proforma P, usuario U WHERE DP.idproforma = '$idproforma' AND DP.idproducto=PR.idproducto AND DP.idproforma=P.idproforma AND P.dni=U.dni ";
+/*		public function agregarBoletaP($idproforma){
+			$consulta="SELECT * FROM detalleproforma DP, producto PR, proforma P, usuario U WHERE DP.idproforma = '$idproforma' AND DP.idproducto=PR.idproducto AND DP.idproforma=P.idproforma AND P.dni=U.dni ";
             $resultado = mysqli_query($this->conectar(),$consulta);
             $num_registros = mysqli_num_rows($resultado);
             
@@ -86,7 +86,7 @@
 			$this->desconectar();
 			return $resultado;
             
-        }
+        }*/
 
 
 	} 
