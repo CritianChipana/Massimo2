@@ -18,7 +18,7 @@
 			<?php
 				$num_Proforma=count($detalleProforma);
 				//echo $listaPrivilegios[0]['nombre']." ".$listaPrivilegios[0]['apellidos'];
-				var_dump($detalleProforma);
+		//		var_dump($detalleProforma);
 		//		if ($btnTC=='Boleta') { ?>
 					<div style="text-align:center;">
 					<form action="controlVerificarAccesoComprobante.php" method="POST">
@@ -32,6 +32,7 @@
 										<tr></th></tr>
 										<tr><th colspan="4">ATENDIO: <?php echo $listaPrivilegios[0]['nombre']." ".$listaPrivilegios[0]['apellidos']; ?></th></tr>
 										<tr><th colspan="4">BOLETA A PAGAR</th></tr>
+										<tr><th colspan="4">MESA: <?php echo $detalleProforma[0]['mesanum']; ?> </th></tr>
 										<tr><th colspan="2">FECHA: <?php echo date("d") . "/" . date("m") . "/" . date("Y") ?> </th>
 											<th colspan="2">HORA: <?php echo date("G").":".date("i"); ?></th>
 										</tr>

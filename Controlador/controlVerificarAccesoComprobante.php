@@ -1,5 +1,4 @@
 <?php
-
 		if(isset($_POST['fom1'])){
 			$fom1="fom1";
 			$dni=$_POST['dni'];
@@ -21,14 +20,13 @@
 					$objMensaje = new formMensajeSistema;
 					$objMensaje -> formMensajeSistemaShow("NO SE ENCONTRARON COINCIDENCIAS","../Controlador/controlVerificarAccesoComprobante.php",$listaPrivilegios,$fom1,"","");
 				}
-			
 			}
 			else{
 			$listaProformas=$objComprobante->listarProforma();
 			$objListarProformas->formListadoProformasShow($listaProformas,$listaPrivilegios);
 			}
 		}
-		else if(isset($_POST['btnp'])){
+	/*	else if(isset($_POST['btnp'])){
 			$btnp="btnp";
 			$dni=$_POST['dni'];
 			include_once("../Modelo/EdetalleUsuario.php");
@@ -55,9 +53,9 @@
 				$listaProformas=$objComprobante->listarProforma();
 				$objListarProformas->formListadoProformasShow($listaProformas,$listaPrivilegios);
 				}
-		}
-		else if(isset($_POST['btncb'])){
-			$btnTC=$_POST['btncb'];
+		}*/
+		else if(isset($_POST['btnpb'])){
+			$btnTC=$_POST['btnpb'];
 			$dni=$_POST['dni'];
 			$mesanum=$_POST['mesanum'];
 			include_once("../Modelo/EdetalleUsuario.php");
@@ -132,7 +130,7 @@
 						$objConfirmacion=new formBienvenida();
 						$objConfirmacion->formBienvenidaShow($listaPrivilegios);				
 					}
-					else if(isset($_POST['btnCOF'])){
+				/*	else if(isset($_POST['btnCOF'])){
 						$ruc=$_POST['ruc'];
 							if (strlen($ruc)==11) {
 							include_once("controlFactura.php");
@@ -147,7 +145,7 @@
 								$objMensaje = new formMensajeSistema;
 								$objMensaje -> formMensajeSistemaShow("EL RUC DEBE CONTENER 11 DIGITOS","../Controlador/controlVerificarAccesoComprobante.php",$listaPrivilegios,$btnPR,"");
 							}
-					}
+					}*/
 				}
 		/*		else if(isset($_POST['idproforma'])){
 				$idproforma=$_POST['idproforma'];
@@ -170,7 +168,7 @@
 				$objConfirmacion->formNotificarComprobanteShow($listaPrivilegios);
 				}*/
 		}
-		else if(isset($_POST['btndb'])){
+	/*	else if(isset($_POST['btndb'])){
 			$btnGR=$_POST['btndb'];
 			$dni=$_POST['dni'];
 			$idboleta=$_POST['idboleta'];
@@ -180,7 +178,7 @@
 			$listaPrivilegios = $objDetalle -> obtenerPrivilegios($dni);
 			$objComprobante= new controlGenerarComprobante($idproforma);
 			$objComprobante->detalleProformaID();
-		}
+		}*/
 	/*	else if(isset($_POST['btndf'])){
 			$btnGR=$_POST['btndf'];
 			$dni=$_POST['dni'];
@@ -192,14 +190,13 @@
 			$objComprobante= new controlGenerarComprobante($idProforma);
 			$objComprobante->detalleProformaID();
 		} */
-		else if(isset($_POST['btnlp'])){
+	/*	else if(isset($_POST['btnlp'])){
 			$dni=$_POST['dni'];
 			include_once("../Modelo/EdetalleUsuario.php");
 			include_once("../Vista/formGestionarProducto.php");
 			$objDetalle = new EdetalleUsuario;
 			$listaPrivilegios = $objDetalle -> obtenerPrivilegios($dni);
-
-		}
+		} */
 
 		// else if(isset($_POST['btndb'])){
 		// 	$btnGR=$_POST['btndb'];

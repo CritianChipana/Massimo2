@@ -20,7 +20,7 @@
 		</head>
 		<link rel="stylesheet" type="text/css" href="../public/css/main.css">
 		<div class="container" >
-			<?php  var_dump($listadoProformas); ?>
+			<?php //  var_dump($listadoProformas); ?>
 			<?php $list=count($listadoProformas);
 			 ?>
 			<?php   date_default_timezone_set("America/Lima");  ?>
@@ -81,7 +81,7 @@
 					<input type="hidden" name="idbtn" value="1">  
 					<input type="hidden" name="mesanum" value=" <?php echo $listadoProformas[$i]['mesanum']; ?> ">
 					<?php if ($listadoProformas[$i]['estadocomprobante']==1): ?>
-					<td><input class="btn btn-warning" type="submit" name="btncb" value="Boleta"></td>
+					<td><input class="btn btn-warning" type="submit" name="btnpb" value="Boleta"></td>
 					<?php endif ?>
 			
 					</form>
