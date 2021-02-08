@@ -98,7 +98,7 @@
                         <div style="width: 32px;;"></div>
                         <div class="col-2 col-md-2">
                             <form action="controlVerificarAccesoReportedeVentas.php" method="post">
-                                <input name="p-8" type="hidden"/>
+                                
                                 <input type="hidden" name="dni" value="<?php echo $dni; ?>">   
                                 <button type="submit" style="width: 100%;" class="btn btn-secondary btn-sm" >Atras</button>
                             </form>

@@ -12,7 +12,14 @@ if($_POST['dni']){
     $objGRV = new formGenerarReportedeVentas;
     $objGRV->MostrarformReportedeVentasShow($listaprivilegios);
    
-}else{
+}
+else if($_POST['imp'])
+{
+    include_once("../shared/formMensajeSistema.php");
+    $objetoMensaje = new formMensajeSistema;
+    $objetoMensaje -> formMensajeSistemaShow2("Se imprimió exitosamente","<a href='../index.php'>Ingresar Usuario</a>");
+}
+else{
     
     include_once("../shared/formMensajeSistema.php");
     $objetoMensaje = new formMensajeSistema;
